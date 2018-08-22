@@ -1,0 +1,153 @@
+.t-mask{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0.4;
+    filter: Alpha(opacity=50);
+    z-index: 9;
+    display: flex;
+    // justify-content: flex-end;
+    display: none;
+    // display: none;
+}
+
+#container{
+	width: 60%;
+	height: 50%;
+	position: absolute;
+	z-index: 11;
+	background: #FBFBFB;
+	top: 25%;
+	left: 20%;
+	border-radius: 5px;
+    box-shadow: 8px 15px 45px 8px #5A5A5A;
+	display: none;
+	.Grid_1{
+		display: flex;
+		// border: 1px solid red;
+		width: 100%;
+		height: 100%;
+	}
+	.Grid_1-cell{
+		flex: 1;
+	}
+	.src{
+		position: relative;
+		.all-fresh{
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			display: block;
+			left: 2%;
+			top: 2%;
+			background: url('../img/refresh_1.png');
+			background-size: contain;
+			cursor: pointer;
+		}
+		.all-fresh:hover{
+			background: url('../img/refresh.png');
+			background-size: contain;
+		}
+		.src-wrap{
+			position: relative;
+			top: 15%;
+			height: 40%;
+			// border: 1px solid red;
+			.src-input{
+				display: block;
+				resize: none;
+				width: 98%;
+				height: 100%;
+				border: none;
+				margin: 0 auto;
+				font-size: 20px;
+				outline: none;
+				border: 1px solid #E5E5E5;
+			}
+			.src-input::-webkit-input-placeholder{
+				color: #DEDEDE;
+			}
+			.src-input:hover{
+				border: 1px solid #0a5bb5;
+			}
+			.src-input:focus{
+				border: 1px solid #0a5bb5;
+			}
+		}
+		.src-wrap:focus{
+			border: 1px solid black;
+		}
+		.src-btn{
+			position: absolute;
+			display: block;
+			width: 90%;
+			height: 40%;
+			margin-top: 8%;
+			left: 5%;
+			outline: none;
+			border: none;
+			text-align: center;
+			line-height: 100%;
+			font-family: 'myTrifont';
+			word-spacing: 8px;
+			font-size: 30px;
+			cursor: pointer;
+			color: #FDFDFD;
+	        background: #0a5bb5;
+	        transition: 800ms ease all;
+		}
+		.src-btn:hover{
+	        background: #FDFDFD;
+	        color: #0a5bb5;
+	    }
+	    .src-btn:before,.src-btn:after{
+	        content:'';
+	        position:absolute;
+	        top:0;
+	        right:0;
+	        height:2px;
+	        width:0;
+	        background: #0a5bb5;
+	        transition:400ms ease all;
+	    }
+	    .src-btn:after{
+	        right:0;
+	        top: 100%;
+	        left:0;
+	        bottom:0;
+	    }
+	    .src-btn:hover:before,.src-btn:hover:after{
+	        width:100%;
+	        transition:800ms ease all;
+	    }
+	}
+	.dst{
+		position: relative;
+		.all-close{
+			background: url('../img/close_1.png');
+			background-size: contain;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			display: block;
+			top: 1%;
+			right: 1%;
+		}
+		.all-close:hover{
+			transform: scale(1.1);
+		}
+		.dst-wrap{
+			position: relative;
+			top: 15%;
+			height: 70%;
+			width: 99%;
+			color: #0a5bb5;
+			font-size: 20px;
+			background: #E5E5E5;
+			overflow: auto;
+		}
+	}
+}

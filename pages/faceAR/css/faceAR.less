@@ -1,0 +1,131 @@
+.main-con{
+    .main-upload{
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        top: 18%;
+        left: 0;
+        // border: 1px solid red;
+        display: none;
+        p{
+            width: 50%;
+            text-align: center;
+            height: 10%;
+            font-size: 30px;
+            line-height: 50px;
+            font-family: "Bradley Hand";
+            color: #0a5bb5;
+            position: relative;
+            // left: 12%;
+            margin: 0 auto;
+        }
+        .up-close {
+            display: block;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-image: url(../img/7.png);
+            background-size: contain;
+            top: 1%;
+            left: 1%;
+            cursor: pointer;
+        }
+        .up-close:hover{
+            transform: scale(1.1);
+        }
+        .up-refresh {
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url(../img/refresh.png);
+            background-size: contain;
+            top: 2%;
+            right: 20%;
+            cursor: pointer;
+        }
+        .up-refresh:hover{
+            transform: scale(1.1);
+        }
+        .upload{
+            position: relative;
+            width: 81%;
+            height: 55%;
+            margin: 0 auto;
+            // margin-top: 0px;
+            // background: #ECECEC;
+            border-radius: 2px;
+            word-spacing: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .img-item {
+                background: #ECECEC;
+                position: relative;
+                float: left;
+                width: 30%;
+                height: 67%;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                border: 2px dashed #C7C7C7;
+                .img-add-icon {
+                    font-size: 70px;
+                    color: #828282;
+                    cursor: pointer;
+                }
+                .img-add-icon:hover{
+                    color: #4B4B4B;
+                }
+            }
+            #img-file-input {
+                display: none;
+            }                     
+        }
+        .up-btn{
+            display: block;
+            position: relative;
+            width: 40%;
+            height: 50px;
+            background: #0a5bb5;
+            color: #FDFDFD;
+            transition: 800ms ease all;
+            // left: 21%;
+            top: 3%;
+            margin: 0 auto;
+            // border-radius: 5px;
+        }
+        .up-btn:hover{
+            background: #FDFDFD;
+            color: #0a5bb5;
+        }
+        .up-btn:before,.up-btn:after{
+            content:'';
+            position:absolute;
+            top:0;
+            right:0;
+            height:2px;
+            width:0;
+            background: #0a5bb5;
+            transition:400ms ease all;
+        }
+        .up-btn:after{
+            right:0;
+            top:50px;
+            left:0;
+            bottom:0;
+        }
+        .up-btn:hover:before,.up-btn:hover:after{
+            width:100%;
+            transition:800ms ease all;
+        }
+
+    }
+}
+
+
+
+
