@@ -14,140 +14,197 @@
     // display: none;
 }
 
-#container{
-	width: 60%;
-	height: 50%;
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;	
+}
+.clearfix{
+	zoom: 1;
+}
+.chat_container{
+	width: 45%;
+	height: 60%;
 	position: absolute;
 	z-index: 11;
 	background: #FBFBFB;
 	top: 25%;
-	left: 20%;
-	border-radius: 5px;
-    box-shadow: 8px 15px 45px 8px #5A5A5A;
+	left: 30%;
+	border-radius: 10px;
+	box-shadow: 8px 15px 45px 8px #5A5A5A;
 	display: none;
-	.Grid_1{
-		display: flex;
-		// border: 1px solid red;
-		width: 100%;
-		height: 100%;
-	}
-	.Grid_1-cell{
-		flex: 1;
-	}
-	.src{
+	.close_area{
+		display: block;
 		position: relative;
-		.all-fresh{
-			width: 24px;
-			height: 24px;
-			position: absolute;
+		width: 100%;
+		height: 8%;
+		top: 0;
+		background: #414141;
+		border-radius: 10px 10px 0 0;
+		.close_icon{
+			width: 23px;
+			height: 23px;
 			display: block;
-			left: 2%;
-			top: 2%;
-			background: url('../img/refresh_1.png');
+			position: absolute;
+			// right: 10px;
+			right: 2%;
+			top: 17%;
+			background: url(../img/close_2.png);
 			background-size: contain;
 			cursor: pointer;
+			transition: 1s all ease;
 		}
-		.all-fresh:hover{
-			background: url('../img/refresh.png');
-			background-size: contain;
+		.close_icon:hover{
+			transform: rotate(180deg);
 		}
-		.src-wrap{
-			position: relative;
-			top: 15%;
-			height: 40%;
-			// border: 1px solid red;
-			.src-input{
-				display: block;
-				resize: none;
-				width: 98%;
-				height: 100%;
-				border: none;
-				margin: 0 auto;
-				font-size: 20px;
-				outline: none;
-				border: 1px solid #E5E5E5;
+	}
+	.message_pool{
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 62%;
+		top: 0;
+		background: #F1F1F1;
+		overflow: auto;
+		.left{
+			margin-top: 15px;
+			margin-bottom: 5px;
+			.left_icon{
+				float: left;
+				width: 30px;
+				height: 30px;
+				margin-left: 10px;
+				border-radius: 50%;
+				background: url(../img/3.png);
+				background-size: contain;
 			}
-			.src-input::-webkit-input-placeholder{
-				color: #DEDEDE;
-			}
-			.src-input:hover{
-				border: 1px solid #0a5bb5;
-			}
-			.src-input:focus{
-				border: 1px solid #0a5bb5;
+			.left_message{
+				position: relative;
+				max-width: 370px;
+				word-break: break-all;
+				background: #F8F8F5;
+				color: #000;
+				padding: 10px;
+				float: left;
+				border-radius: 7px;
+				margin-left: 16px;
+				font-family: "Comic Sans MS";
+				.lArrow{
+					position: absolute;
+					width: 0;
+					height: 0;
+					font-size: 0;
+					border: solid 8px;
+					border-color: #F1F1F1 #F8F8F5 #F1F1F1 #F1F1F1;
+					left: -16px;
+					top: 10px;
+				}
 			}
 		}
-		.src-wrap:focus{
-			border: 1px solid black;
+		.right{
+			margin-top: 15px;
+			margin-bottom: 5px;
+			.right_icon{
+				float: right;
+				width: 30px;
+				height: 30px;
+				margin-right: 10px;
+				border-radius: 50%;
+				background: url(../img/me.png);
+				background-size: contain;
+			}
+			.right_message{
+				position: relative;
+				max-width: 370px;
+				word-break: break-all;
+				background: #19C011;
+				color: #fff;
+				float: right;
+				border-radius: 7px;
+				padding: 10px;
+				margin-right: 16px;
+				font-family: "Comic Sans MS";
+				.rArrow{
+					position: absolute;
+					width: 0;
+					height: 0;
+					font-size: 0;
+					border: solid 8px;
+					border-color: #F1F1F1 #F1F1F1 #F1F1F1 #19C011;
+					right: -16px;
+					top: 10px;
+				}
+			}
 		}
-		.src-btn{
-			position: absolute;
+	}
+	.input_container{
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 29%;
+		border-top: 1px solid #A6A6A6;
+		#input_text{
 			display: block;
-			width: 90%;
-			height: 40%;
-			margin-top: 8%;
-			left: 5%;
+			overflow: auto;
+			position: relative;
+			width: 97%;
+			max-width: 100%;
+			height: 60%;
+			resize: none;
 			outline: none;
 			border: none;
-			text-align: center;
-			line-height: 100%;
-			font-family: 'myTrifont';
-			word-spacing: 8px;
-			font-size: 30px;
-			cursor: pointer;
-			color: #FDFDFD;
-	        background: #0a5bb5;
-	        transition: 800ms ease all;
-		}
-		.src-btn:hover{
-	        background: #FDFDFD;
-	        color: #0a5bb5;
-	    }
-	    .src-btn:before,.src-btn:after{
-	        content:'';
-	        position:absolute;
-	        top:0;
-	        right:0;
-	        height:2px;
-	        width:0;
-	        background: #0a5bb5;
-	        transition:400ms ease all;
-	    }
-	    .src-btn:after{
-	        right:0;
-	        top: 100%;
-	        left:0;
-	        bottom:0;
-	    }
-	    .src-btn:hover:before,.src-btn:hover:after{
-	        width:100%;
-	        transition:800ms ease all;
-	    }
-	}
-	.dst{
-		position: relative;
-		.all-close{
-			background: url('../img/close_1.png');
-			background-size: contain;
-			width: 30px;
-			height: 30px;
-			position: absolute;
-			display: block;
-			top: 1%;
-			right: 1%;
-		}
-		.all-close:hover{
-			transform: scale(1.1);
-		}
-		.dst-wrap{
-			position: relative;
-			top: 15%;
-			height: 70%;
-			width: 99%;
-			color: #0a5bb5;
 			font-size: 20px;
-			background: #E5E5E5;
-			overflow: auto;
+			padding: 5px;
+			font-family: "Comic Sans MS";
+		}
+		#input_text::-webkit-input-placeholder{
+			color: #B6B6B6;
+		}
+		.send_area{
+			display: block;
+			position: relative;
+			width: 99.5%;
+			height: 35%;
+			top: 0;
+			background: #fff;
+			border-radius: 0 0 5px 5px;
+			.refresh{
+				display: block;
+				width: 23px;
+				height: 23px;
+				position: absolute;
+				// border: 1px solid black;
+				top: 30%;
+				right: 32%;
+				background: url(../img/refresh_2.png);
+				background-size: contain;
+				transition: 1s all ease;
+				cursor: pointer;
+			}
+			.refresh:hover{
+				transform: rotate(360deg);
+			}
+			.send_btn{
+				display: block;
+				position: absolute;
+				height: 80%;
+				width: 30%;
+				right: 1%;
+				top: 10%;
+				cursor: pointer;
+				font-size: 25px;
+				font-family: "Comic Sans MS";
+				font-weight: 800;
+				border-radius: 7px;
+				background: #19CAAD;
+				color: #fff;
+				border: 0;
+				text-align: center;
+				line-height: 80%;			
+			}
+			.send_btn:hover{
+				background: rgb(248,147,29);
+			}
 		}
 	}
 }
